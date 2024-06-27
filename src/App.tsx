@@ -1,5 +1,6 @@
 import "./App.css";
 import { createServer } from "miragejs";
+import Header from "./components/header";
 
 function App() {
   let server = createServer({
@@ -87,10 +88,13 @@ function App() {
     },
   });
 
-  const response = fetch('/api/products').then(res => res.json()).then(data => console.log(data))
+  const response = fetch("/api/products")
+    .then((res) => res.json())
+    .then((data) => console.log(data));
 
   return (
     <>
+      <Header />
       <h1>Hello world!</h1>
     </>
   );

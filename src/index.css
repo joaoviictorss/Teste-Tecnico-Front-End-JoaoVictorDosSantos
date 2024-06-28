@@ -1,3 +1,7 @@
+:root {
+  --border: #e5e7eb;
+}
+
 * {
   margin: 0;
   padding: 0;

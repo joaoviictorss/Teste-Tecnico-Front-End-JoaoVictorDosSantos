@@ -1,10 +1,8 @@
 import "./App.css";
-import Header from "./components/header";
 import Container from "./components/container";
 import ProductCard from "./components/product-card";
 import { Product } from "./types";
 import { useEffect, useState } from "react";
-import Footer from "./components/footer";
 
 function App() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -17,10 +15,8 @@ function App() {
 
   return (
     <>
-      <Header />
-
       <Container>
-        <div className="billboard-container">
+        <div className="billboard-container" id="id-billboard">
           <div className="billboard">
             <div className="title-container">
               <div className="title">
@@ -30,7 +26,7 @@ function App() {
           </div>
         </div>
 
-        <div className="products">
+        <div className="products" id="id-products">
           <h2>Produtos com desconto</h2>
           <div className="products-grid">
             {products.map((product) => (
@@ -38,7 +34,6 @@ function App() {
             ))}
           </div>
         </div>
-        <Footer />
       </Container>
     </>
   );

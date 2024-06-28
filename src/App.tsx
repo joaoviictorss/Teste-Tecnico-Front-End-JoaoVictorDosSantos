@@ -4,6 +4,7 @@ import Container from "./components/container";
 import ProductCard from "./components/product-card";
 import { Product } from "./types";
 import { useEffect, useState } from "react";
+import Footer from "./components/footer";
 
 function App() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -37,6 +38,7 @@ function App() {
             ))}
           </div>
         </div>
+        <Footer />
       </Container>
     </>
   );

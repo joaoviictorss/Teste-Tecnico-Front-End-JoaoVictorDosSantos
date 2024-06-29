@@ -2,11 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
+import ToastProvider from "./providers/toast-provider.tsx";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { makeServer } from "./server.ts";
+
 import Header from "./components/header/index.tsx";
 import Footer from "./components/footer/index.tsx";
-
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Cart from "./components/cart/index.tsx";
 
 // Rotas da aplicação com o react router
@@ -26,6 +27,7 @@ makeServer();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
+    <ToastProvider />
     <Header />
     <RouterProvider router={router} />
     <Footer />

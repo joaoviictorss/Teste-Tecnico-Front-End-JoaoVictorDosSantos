@@ -1,7 +1,12 @@
 export interface Product {
-  id: string;
+  id: number;
   name: string;
   price: number;
   imageUrl: string;
   description: string;
 }
+
+export type CartItem = {
+  product: Product;
+  quantity: number;
+};

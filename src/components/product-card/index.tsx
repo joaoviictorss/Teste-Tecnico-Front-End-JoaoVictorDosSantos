@@ -1,3 +1,5 @@
+import { MouseEventHandler } from "react";
+import useCart from "../../hooks/use-cart";
 import { Product } from "../../types";
 import { formatter } from "../../utils/format-currency";
 import "./style.css";
@@ -9,6 +11,14 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ data }: ProductCardProps) => {
+  const cart = useCart();
+
+  const onAddtoCart: MouseEventHandler<HTMLButtonElement> = (event) => {
+    event.stopPropagation();
+
+    cart.addItem({ product: data, quantity: 1 });
+  };
+
   return (
     <div className="card-container">
       {/* Imagem do produto */}
@@ -16,10 +26,9 @@ const ProductCard = ({ data }: ProductCardProps) => {
         <img src={data.imageUrl} alt="product-image" />
         <div className="cart-button-container">
           <div className="cart-button-center">
-
-          <button className="cart-button">
-            <ShoppingCart size={20} color="#4b5563" />
-          </button>
+            <button className="cart-button" onClick={onAddtoCart}>
+              <ShoppingCart size={20} color="#4b5563" />
+            </button>
           </div>
         </div>
       </div>

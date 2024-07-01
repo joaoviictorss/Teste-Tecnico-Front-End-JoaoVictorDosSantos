@@ -1,13 +1,18 @@
 import { ShoppingBag } from "lucide-react";
 import Container from "../container";
 import "./style.css";
+import useCart from "../../hooks/use-cart";
 
 const Header = () => {
+  const cart = useCart();
+
   return (
     <header>
       <Container>
         <div className="header-content">
-          <span className="logo">NextGen</span>
+          <a href="/" className="logo">
+            NextGen
+          </a>
 
           <nav>
             <ul>
@@ -24,7 +29,7 @@ const Header = () => {
             <button>
               <a href="/cart">
                 <ShoppingBag size={20} color="white" />
-                <span className="cart-count">0</span>
+                <span className="cart-count">{cart.items.length}</span>
               </a>
             </button>
           </div>

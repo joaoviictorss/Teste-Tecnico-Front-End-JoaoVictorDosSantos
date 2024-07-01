@@ -1,0 +1,26 @@
+.input-quantity-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 2px;
+  width: min-content;
+  margin: 8px 0;
+}
+
+.input-quantity-container button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.input-quantity-container button,
+.input-quantity-container span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.25rem;
+  font-weight: 500;
+}

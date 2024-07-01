@@ -38,7 +38,6 @@ const useCart = create(
           item.product.id === id ? { ...item, quantity } : item
         );
         set({ items: updatedItems });
-        toast.success("Quantidade do item atualizada");
       },
       removeAll: () => set({ items: [] }),
     }),
